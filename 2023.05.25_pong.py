@@ -5,7 +5,7 @@ wn.title("Pong")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
-
+print("hallo")
 # Balken A
 balken_a = turtle.Turtle()
 balken_a.speed(0)
