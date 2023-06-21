@@ -12,7 +12,7 @@ window.setup(width=800, height=600)
 # Turtle für den "Play"-Knopf erstellen
 play_button = turtle.Turtle()
 play_button.speed(0)
-play_button.color("white")
+play_button.color("light blue")
 play_button.penup()
 play_button.hideturtle()
 play_button.goto(0, 0)
@@ -52,8 +52,6 @@ wn.bgcolor("black")
 wn.setup(width, height)
 wn.tracer(0)
 
-
-
 # Balken A
 balken_a = turtle.Turtle()
 balken_a.speed(0)
@@ -74,23 +72,13 @@ balken_b.goto(350, 0)
 
 # Ball
 ball = turtle.Turtle()
-ball.speed(0.01)
+ball.speed(0)
 ball.shape("square")
 ball.color("light blue")
 ball.penup()
 ball.goto(0, 0)
 ball.dx = 2
 ball.dy = -2
-
-# Pen
-pen = turtle.Turtle()
-pen.speed(0)
-pen.color("white")
-pen.penup()
-pen.hideturtle()
-pen.goto(0, 260)
-pen.write("Player 1: 0 Player 2: 0", align="center", font=("Courier", 24, "normal"))
-
 
 # Keybord binding
 wn.listen()
@@ -108,6 +96,15 @@ def play_game(x, y):
     # Diese Funktion wird aufgerufen, wenn der Benutzer auf den "Play"-Knopf klickt
     play_button.clear()
     print("Spiel startet!")
+    # Pen
+    pen = turtle.Turtle()
+    pen.speed(0)
+    pen.color("light blue")
+    pen.penup()
+    pen.hideturtle()
+    pen.goto(0, 260)
+    pen.write("Player 1: 0 Player 2: 0", align="center", font=("Courier", 24, "normal"))
+
     while True:
         time.sleep(0.001)
         wn.update()
@@ -156,7 +153,7 @@ def play_game(x, y):
 
 
         # Balken und Ball aufeinander prallen
-        if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < balken_b.ycor() + 50 and ball.ycor() > balken_b.ycor() - 50):
+        if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < balken_b.ycor() + 60 and ball.ycor() > balken_b.ycor() - 60):
             ball.setx(340)
             ball.dx *= -1
 
